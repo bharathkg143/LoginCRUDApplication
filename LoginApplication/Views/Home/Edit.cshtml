@@ -1,0 +1,66 @@
+﻿@model SignUp
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="card bg-secondary shadow border-0 my-4">
+    <div class="card-header bg-gradient m-lg-0 py-3" style="background-color:cadetblue">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>Sign Up</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <form method="post" asp-controller="Home" asp-action="SignUp">
+            <input hidden asp-for="Id" />
+            <div class="row">
+                <div class="col-12">
+                    <div class="border p-3">
+                        @*<div asp-validation-summary="All" class="text-danger"></div>*@
+
+                        <div class="mb-3 row p-1">
+                            <label asp-for="UserName" class="p-0">User Name</label>
+                            <input type="text" class="form-control border-0 shadow" asp-for="UserName" />
+                            <span class="text-danger" asp-validation-for="UserName"></span>
+                        </div>
+
+                        <div class="mb-3 row p-1">
+                            <label asp-for="Email" class="p-0"> User Mail</label>
+                            <input type="text" class="form-control border-0 shadow" asp-for="Email" />
+                            <span class="text-danger" asp-validation-for="Email"></span>
+                        </div>
+
+                        <div class="mb-3 row p-1">
+                            <label asp-for="NewPassword" class="p-0">New Password</label>
+                            <input type="text" class="form-control border-0 shadow" asp-for="NewPassword" />
+                            <span class="text-danger" asp-validation-for="NewPassword"></span>
+                        </div>
+
+                        <div class="mb-3 row p-1">
+                            <label asp-for="ConfirmPassword" class="p-0">Confirm Password</label>
+                            <input type="text" class="form-control border-0 shadow" asp-for="ConfirmPassword" />
+                            <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+
+                                <button type="submit" class="btn btn-primary form-control">SignUp</button>
+                            </div>
+                            <div class="col-6">
+                                <a class="btn btn-secondary border form-control" asp-controller="Home" asp-action="Index">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+
+    <partial name="_ValidationScriptsPartial" />
+}
+

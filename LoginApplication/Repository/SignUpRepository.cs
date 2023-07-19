@@ -22,9 +22,11 @@ namespace LoginApplication.Repository
             SignUp? signUp = _context.SignUps.FirstOrDefault(x => x.Id == id);
             if (signUp != null)
             {
+                //Commit
                 _context.SignUps.Remove(signUp);
                 _context.SaveChanges();
             }
+
         }
 
         public SignUp Get(int id)
